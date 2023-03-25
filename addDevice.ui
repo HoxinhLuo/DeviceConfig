@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.3">
+  <object class="tk.Toplevel" id="addDevTopLevel" named="True">
+    <property name="height">200</property>
+    <property name="padx">5</property>
+    <property name="pady">5</property>
+    <property name="resizable">none</property>
+    <property name="title" translatable="yes">添加设备</property>
+    <child>
+      <object class="ttk.Notebook" id="addDeviceNotebook" named="True">
+        <layout manager="pack">
+          <property name="expand">true</property>
+          <property name="fill">both</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="ttk.Notebook.Tab" id="autoImportTab" named="True">
+            <property name="text" translatable="yes">文件导入</property>
+            <child>
+              <object class="ttk.Frame" id="autoImportFrame" named="True">
+                <property name="height">200</property>
+                <property name="width">200</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+                <child>
+                  <object class="ttk.Labelframe" id="fileTypeLabelFrame" named="True">
+                    <property name="text" translatable="yes">文件类型</property>
+                    <layout manager="pack">
+                      <property name="fill">x</property>
+                      <property name="ipady">3</property>
+                      <property name="padx">5</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Radiobutton" id="fileTypexlsxRd" named="True">
+                        <property name="text" translatable="yes">XLSX</property>
+                        <property name="value">xlsx</property>
+                        <property name="variable">string:fileTypeRd</property>
+                        <layout manager="pack">
+                          <property name="padx">5</property>
+                          <property name="side">left</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Radiobutton" id="fileTypeCSVRd" named="True">
+                        <property name="text" translatable="yes">CSV</property>
+                        <property name="value">csv</property>
+                        <property name="variable">string:fileTypeRd</property>
+                        <layout manager="pack">
+                          <property name="padx">5</property>
+                          <property name="side">left</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Radiobutton" id="fileTypeJsonRd" named="True">
+                        <property name="text" translatable="yes">JSON</property>
+                        <property name="value">json</property>
+                        <property name="variable">string:fileTypeRd</property>
+                        <layout manager="pack">
+                          <property name="padx">5</property>
+                          <property name="side">left</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Frame" id="fileOperateFrame" named="True">
+                    <layout manager="pack">
+                      <property name="fill">x</property>
+                      <property name="padx">5</property>
+                      <property name="pady">10</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Button" id="fileSelectBtn" named="True">
+                        <property name="command" type="command" cbtype="simple">fileSelect</property>
+                        <property name="text" translatable="yes">选择文件</property>
+                        <layout manager="pack">
+                          <property name="anchor">center</property>
+                          <property name="fill">x</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Frame" id="fileNameFrame" named="True">
+                    <layout manager="pack">
+                      <property name="anchor">center</property>
+                      <property name="padx">5</property>
+                      <property name="pady">5</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Label" id="importFileNameLabel" named="True">
+                        <property name="text" translatable="yes">C:\Network_List.csv</property>
+                        <property name="textvariable">string:importFrlenameVar</property>
+                        <layout manager="pack">
+                          <property name="anchor">center</property>
+                          <property name="fill">x</property>
+                          <property name="padx">5</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Frame" id="dataValidateFrame" named="True">
+                    <layout manager="pack">
+                      <property name="fill">x</property>
+                      <property name="padx">5</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Button" id="validateDataBtn" named="True">
+                        <property name="command" type="command" cbtype="simple">validateData</property>
+                        <property name="text" translatable="yes">检查数据有效性</property>
+                        <layout manager="pack">
+                          <property name="anchor">w</property>
+                          <property name="fill">x</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Frame" id="importDataFrame" named="True">
+                    <layout manager="pack">
+                      <property name="anchor">center</property>
+                      <property name="fill">x</property>
+                      <property name="padx">5</property>
+                      <property name="pady">5</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Button" id="dataImportBtn" named="True">
+                        <property name="command" type="command" cbtype="simple">dataImport</property>
+                        <property name="text" translatable="yes">导入数据</property>
+                        <layout manager="pack">
+                          <property name="fill">x</property>
+                          <property name="pady">5</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Notebook.Tab" id="inputTab" named="True">
+            <property name="text" translatable="yes">手动添加</property>
+            <child>
+              <object class="ttk.Frame" id="inputFrame" named="True">
+                <layout manager="pack">
+                  <property name="expand">true</property>
+                  <property name="fill">both</property>
+                  <property name="side">top</property>
+                </layout>
+                <child>
+                  <object class="ttk.Frame" id="addDeviceFrame" named="True">
+                    <layout manager="pack">
+                      <property name="anchor">center</property>
+                      <property name="fill">x</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Label" id="devNameLb" named="True">
+                        <property name="justify">left</property>
+                        <property name="text" translatable="yes">设备名称:</property>
+                        <layout manager="grid">
+                          <property name="column">0</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Entry" id="devNameEntry" named="True">
+                        <property name="justify">left</property>
+                        <property name="textvariable">string:devNameVar</property>
+                        <property name="width">30</property>
+                        <layout manager="grid">
+                          <property name="column">1</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Label" id="devTypeLb" named="True">
+                        <property name="text" translatable="yes">设备类型:</property>
+                        <layout manager="grid">
+                          <property name="column">0</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Combobox" id="devTypeCb" named="True">
+                        <property name="values">"交换机" "防火墙" "其他"</property>
+                        <property name="width">28</property>
+                        <layout manager="grid">
+                          <property name="column">1</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Label" id="devModelLb" named="True">
+                        <property name="text" translatable="yes">设备型号:</property>
+                        <layout manager="grid">
+                          <property name="column">0</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Combobox" id="devModelCb" named="True">
+                        <property name="values">"思科" "H3C" "安点" "其他"</property>
+                        <property name="width">28</property>
+                        <layout manager="grid">
+                          <property name="column">1</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Label" id="devIPLb" named="True">
+                        <property name="justify">left</property>
+                        <property name="text" translatable="yes">设备    IP:</property>
+                        <layout manager="grid">
+                          <property name="column">0</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">3</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Entry" id="devIPEntry" named="True">
+                        <property name="justify">left</property>
+                        <property name="textvariable">string:devIPVar</property>
+                        <property name="width">30</property>
+                        <layout manager="grid">
+                          <property name="column">1</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">3</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Label" id="devSiteLb" named="True">
+                        <property name="justify">left</property>
+                        <property name="text" translatable="yes">所属装置:</property>
+                        <layout manager="grid">
+                          <property name="column">0</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">4</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Entry" id="devSiteEntry" named="True">
+                        <property name="justify">left</property>
+                        <property name="textvariable">string:devSiteVar</property>
+                        <property name="width">30</property>
+                        <layout manager="grid">
+                          <property name="column">1</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="row">4</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Frame" id="addDeviceEnsureFrame" named="True">
+                    <layout manager="pack">
+                      <property name="expand">true</property>
+                      <property name="fill">both</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Button" id="addDevEnsureBtn" named="True">
+                        <property name="command" type="command" cbtype="simple">addDevEnsure</property>
+                        <property name="text" translatable="yes">添加设备</property>
+                        <layout manager="pack">
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="side">right</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
